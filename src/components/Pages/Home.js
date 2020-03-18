@@ -24,6 +24,7 @@ class Home extends Component {
         <a href='#' className={'link'}>Local News</a>
         <a href='#' className={'link'}>Child Care</a>
         <a href='#' className={'link'}>Lost & Found</a>
+        <a href='#' className={'link'}>Classes</a>
         <a href='#' className={'link'}>Musicians</a>
         <a href='#' className={'link'}>Events</a>
         <a href='#' className={'link'}>Pets</a>
@@ -34,12 +35,13 @@ class Home extends Component {
 loopTags = () => {
     let testTags = ['a','s','d','f','g','h','j']
     return testTags.map((item, i) => <div key={i} className={'tag'}>Apple 
-    Macbook</div>)
+    Macbook{' '}</div>)
 }
   render() {
   return (
-    <div>
-        <h1>Connecting People <br/> Everywhere</h1>
+    <div className='home'>
+        <div className='container'>
+        <h1>Connecting People <br/> Everywhere :)</h1>
         <section className={'links'}>
             {this.loopCategories()}
         </section>
@@ -53,6 +55,7 @@ loopTags = () => {
                 {this.loopTags()}
             </div>
         </section>
+        </div>
     </div>
   );
 }

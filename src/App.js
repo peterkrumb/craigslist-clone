@@ -10,7 +10,7 @@ import './App.scss';
 import Header from './components/Header';
 import Home from './components/Pages/Home';
 import Listings from './components/Pages/Listings';
-import Item from './components/Pages/Item';
+import Details from './components/Pages/Details';
 import Category from './components/Pages/Category';
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
       <Route exact path='/:city/' component={Home} />
       <Route exact path='/:city/:category/' component={Category} />
       <Route exact path='/:city/:category/:listings' component={Listings} />
-      <Route exact path='/:city/:category/:listings/:item' component={Item} />
+      <Route exact path='/:city/:category/:listings/:item' component={Details} />
     </div>
     </Router>
   );

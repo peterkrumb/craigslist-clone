@@ -4,13 +4,13 @@
         text-align: center;
         text-transform: capitalize;
         color: #fff;
-        //padding: 50px 0;
+        padding-bottom: 55px;
     }
 
     .links{
         background: rgba(0,0,0,.5);
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(8, 1fr);
             grid-gap: 20px;
             padding: 20px;
             margin-bottom: 70px;
@@ -28,10 +28,13 @@
         .group-links{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            &.single-col{
+                grid-template-columns: repeat(1, 1fr);
+            }
 
             .link{
                 font-weight: 300;
-                font-size: .8rem;
+                font-size: .7rem;
                 color: #fff;
                 margin-bottom: .5rem;
                 text-decoration: none;

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../../App.scss';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 class Home extends Component {
   constructor() {
@@ -38,19 +39,20 @@ class Home extends Component {
   })
 }
   loopCategories = () => {
+    const {match, history} = this.props
     if (this.state.categoriesData != '') {
       return this.state.categoriesData.map((category, i) => {
         const loopListings = () => {
           return category.listings.map((listing, index) => {
             return (
-              <a href={`${category.title}/${listing.slug}`} className={'link'} key={index}>
-                {listing.name}
-                </a>
+              <Link to={`/${match.params.city}/${category.title}/${listing.slug}`}
+               key={index}>{listing.name}</Link>
+               
             )
           })
         }
           return <div className = {'categories'} key={i}>
-          <div className={'title'}>{category.title}</div>
+          <a href={`/${match.params.city}/${category.title}`} className={'title'}>{category.title}</a>
           <div className={`group-links ${(category.title == 'jobs' || category.title == 'housing') ? 'single-col' : ''}`}>
             {loopListings()}
           </div>
